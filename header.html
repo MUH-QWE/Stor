@@ -1,0 +1,84 @@
+<!-- includes/header.html -->
+<header id="main-header">
+    <div class="container">
+        <div class="logo">
+            <a href="home.html">
+                <i class="fas fa-crown"></i>
+                <span>LUXE</span>
+            </a>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <form id="global-search-form">
+                <input type="text" 
+                       id="global-search-input" 
+                       placeholder="Search products..."
+                       aria-label="Search products">
+                <button type="submit" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav id="navbar-links" class="desktop-nav">
+            <!-- سيتم ملؤه بواسطة NavigationManager -->
+        </nav>
+        
+        <!-- Header Actions -->
+        <div class="header-actions">
+            <!-- Wishlist -->
+            <div class="wishlist-icon">
+                <a href="Wishlist.html" aria-label="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+            </div>
+            
+            <!-- Cart -->
+            <div class="cart-icon">
+                <a href="Cart.html" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <!-- User Area -->
+            <div class="user-area">
+                <!-- سيتم ملؤه بواسطة NavigationManager -->
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div id="mobile-nav-overlay" class="mobile-nav-overlay">
+    <div class="mobile-nav-container">
+        <button class="mobile-nav-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LUXE</span>
+                </div>
+            </div>
+            <nav id="mobile-nav-links">
+                <!-- سيتم ملؤه بواسطة NavigationManager -->
+            </nav>
+            <div class="mobile-nav-footer">
+                <a href="LogIn.html" class="mobile-login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

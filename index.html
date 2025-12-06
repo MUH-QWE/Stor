@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global Settings -->
+    <script>
+        const DEVELOPER_MODE = 1;      // Enable Local Storage
+        const USE_PHP_BACKEND = 0;     // Use PHP Backend
+        const DEBUG_MODE = 1;          // Enable debug logs
+        const OFFLINE_MODE = 1;        // Enable offline mode
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - Premium Fashion</title>
+
+    <!-- ✅ CORRECTED CSS LINKS -->
+    <link rel="stylesheet" href="css/Theme.css">
+    <link rel="stylesheet" href="css/Navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Home.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body data-page="home">
+
+    <!-- HEADER -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>LUXE</span>
+            </div>
+
+            <nav id="navbar-links">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="AdminPanel.html">Admin Panel</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="cart-icon" onclick="window.location.href='Cart.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+
+                <div id="theme-selector" class="theme-selector">
+                    <label for="admin-theme-select">Theme:</label>
+                    <select id="admin-theme-select">
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to LUXE</h1>
+                <p>Discover the latest collections of women's and men's fashion with modern style</p>
+                <button class="btn-hero" onclick="window.location.href='Products.html'">Explore Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SALE SECTION -->
+    <section id="sale-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>On Sale</h2>
+                <p>Special offers and discounts</p>
+            </div>
+
+            <div class="products-grid" id="sale-products">
+                <!-- Will be populated by JavaScript -->
+                <div class="loading">Loading products...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section id="best-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Best Sellers</h2>
+                <p>Our most popular items</p>
+            </div>
+
+            <div class="products-grid" id="best-products">
+                <!-- Will be populated by JavaScript -->
+                <div class="loading">Loading products...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section id="new-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>New Arrivals</h2>
+                <p>Latest products in our store</p>
+            </div>
+
+            <div class="products-grid" id="new-products">
+                <!-- Will be populated by JavaScript -->
+                <div class="loading">Loading products...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>For all orders over $100</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Payment</h3>
+                    <p>100% secure payments</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-undo-alt"></i>
+                    <h3>Easy Returns</h3>
+                    <p>30 days return policy</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <span>LUXE</span>
+                    </div>
+                    <p>Premium fashion for the modern individual. Quality, style, and elegance in every piece.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Products.html">Shop</a></li>
+                        <li><a href="Cart.html">Cart</a></li>
+                        <li><a href="Login.html">My Account</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@luxe.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fashion Street, New York, USA</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 LUXE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ CORRECTED JS LINKS -->
+    <script src="js/theme.js"></script>
+    <script src="js/Home.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/App.js"></script>
+
+    <!-- Initialize Cart Count -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                const cartCountElement = document.querySelector('.cart-count');
+                if (cartCountElement) {
+                    cartCountElement.textContent = cartCount;
+                }
+            }
+
+            updateCartCount();
+
+            // Update cart when products are added
+            window.addEventListener('storage', function (e) {
+                if (e.key === 'cart') {
+                    updateCartCount();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

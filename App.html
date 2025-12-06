@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Global Settings -->
+    <script>
+        const DEVELOPER_MODE = 1;      // Enable Local Storage
+        const USE_PHP_BACKEND = 0;     // Use PHP Backend
+        const DEBUG_MODE = 1;          // Enable debug logs
+        const OFFLINE_MODE = 1;        // Enable offline mode
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE - Premium Fashion Store</title>
+    
+    <!-- ✅ CORRECTED CSS LINKS -->
+    <link rel="stylesheet" href="css/Theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Home.css">
+    <link rel="stylesheet" href="css/Navbar.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body data-page="home">
+    <!-- HEADER -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="color: inherit; text-decoration: none;">
+                    <i class="fas fa-crown"></i>
+                    <span>LUXE</span>
+                </a>
+            </div>
+            
+            <nav id="navbar-links">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="AdminPanel.html">Admin Panel</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="cart-icon">
+                    <a href="Cart.html" style="color: inherit; text-decoration: none;">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <div id="theme-selector" class="theme-selector">
+                    <label for="admin-theme-select">Theme:</label>
+                    <select id="admin-theme-select">
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to LUXE</h1>
+                <p>Discover the latest collections of premium fashion for men and women with modern style and elegance</p>
+                <button class="btn-hero" onclick="window.location.href='Products.html'">Explore Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose LUXE</h2>
+                <p>Experience the difference with our premium services</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest materials and craftsmanship in every piece we offer.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Fast & Free Shipping</h3>
+                    <p>Free shipping on orders over $100 with express delivery options available.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Shopping</h3>
+                    <p>Your data is protected with 256-bit SSL encryption and secure payment processing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated customer service team is always here to help you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST SELLING PRODUCTS -->
+    <section id="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Best Selling Products</h2>
+                <p>Top picks loved by our customers</p>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded by JavaScript -->
+                <div class="loading-products">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading products...</p>
+                </div>
+            </div>
+            
+            <div class="section-footer">
+                <a href="Products.html" class="btn-view-all">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SALE SECTION -->
+    <section id="sale-section" class="sale-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Special Offers</h2>
+                <p>Limited time discounts on selected items</p>
+            </div>
+            
+            <div class="sale-banner">
+                <div class="sale-content">
+                    <h3>Summer Sale</h3>
+                    <h2>UP TO 50% OFF</h2>
+                    <p>On selected fashion items. Limited time offer!</p>
+                    <button class="btn-sale" onclick="window.location.href='Products.html?filter=sale'">
+                        Shop Sale <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ARRIVALS -->
+    <section id="new-arrivals">
+        <div class="container">
+            <div class="section-header">
+                <h2>New Arrivals</h2>
+                <p>Discover our latest collection</p>
+            </div>
+            
+            <div class="new-products-grid" id="new-products">
+                <!-- New products will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section id="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter and get 10% off your first order</p>
+                
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
+                
+                <p class="privacy-note">
+                    By subscribing, you agree to our <a href="#">Privacy Policy</a>. 
+                    You can unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <span>LUXE</span>
+                    </div>
+                    <p>Premium fashion for the modern individual. Quality, style, and elegance in every piece.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Products.html">Shop</a></li>
+                        <li><a href="Cart.html">Cart</a></li>
+                        <li><a href="Login.html">Login</a></li>
+                        <li><a href="AdminPanel.html">Admin Panel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="Products.html?category=men">Men's Collection</a></li>
+                        <li><a href="Products.html?category=women">Women's Collection</a></li>
+                        <li><a href="Products.html?category=accessories">Accessories</a></li>
+                        <li><a href="Products.html?category=shoes">Shoes</a></li>
+                        <li><a href="Products.html?filter=new">New Arrivals</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@luxe.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fashion Street, New York, USA</p>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <p>Mon-Fri: 9:00 AM - 8:00 PM</p>
+                        <p>Sat-Sun: 10:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <p>We accept:</p>
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa" title="Visa"></i>
+                        <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                        <i class="fab fa-cc-amex" title="American Express"></i>
+                        <i class="fab fa-cc-paypal" title="PayPal"></i>
+                        <i class="fab fa-apple-pay" title="Apple Pay"></i>
+                    </div>
+                </div>
+                
+                <p>&copy; 2025 LUXE. All rights reserved. | 
+                   <a href="#">Privacy Policy</a> | 
+                   <a href="#">Terms of Service</a> | 
+                   <a href="#">Cookie Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ CORRECTED JS LINKS -->
+    <script src="js/App.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/Home.js"></script>
+    
+    <!-- Initialize Cart Count -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to update cart count
+            function updateCartCount() {
+                try {
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const cartCount = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                    const cartCountElement = document.getElementById('cart-count');
+                    
+                    if (cartCountElement) {
+                        cartCountElement.textContent = cartCount;
+                        cartCountElement.style.display = cartCount > 0 ? 'flex' : 'none';
+                    }
+                } catch (error) {
+                    console.error('Error updating cart count:', error);
+                }
+            }
+            
+            // Initial update
+            updateCartCount();
+            
+            // Update when cart changes
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'cart') {
+                    updateCartCount();
+                }
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    if (email) {
+                        // Save to localStorage in developer mode
+                        if (DEVELOPER_MODE) {
+                            let subscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
+                            if (!subscribers.includes(email)) {
+                                subscribers.push(email);
+                                localStorage.setItem('newsletter_subscribers', JSON.stringify(subscribers));
+                            }
+                        }
+                        
+                        // Show success message
+                        alert('Thank you for subscribing to our newsletter! Check your email for the discount code.');
+                        this.reset();
+                    }
+                });
+            }
+            
+            // Initialize theme
+            if (typeof initTheme === 'function') {
+                initTheme();
+            }
+        });
+    </script>
+</body>
+</html>

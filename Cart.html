@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - LUXE Fashion</title>
+    
+    <!-- ✅ CORRECTED CSS LINKS -->
+    <link rel="stylesheet" href="css/Theme.css">
+    <link rel="stylesheet" href="css/Navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Cart.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body data-page="cart">
+
+    <!-- HEADER -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>LUXE</span>
+            </div>
+            
+            <nav id="navbar-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Cart.html" class="active">Cart</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="AdminPanel.html">Admin Panel</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="cart-icon" onclick="window.location.href='Cart.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <div id="theme-selector" class="theme-selector">
+                    <label for="admin-theme-select">Theme:</label>
+                    <select id="admin-theme-select">
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CART PAGE CONTENT -->
+    <main id="cart-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Shopping Cart</h1>
+                <p>Review your items and proceed to checkout</p>
+            </div>
+            
+            <!-- Cart Content -->
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-header">
+                        <h2>Your Items (<span id="item-count">0</span> items)</h2>
+                        <button class="clear-cart-btn" id="clear-cart">
+                            <i class="fas fa-trash"></i> Clear Cart
+                        </button>
+                    </div>
+                    
+                    <div class="cart-items" id="cart-items-container">
+                        <!-- Cart items will be loaded here -->
+                        <div class="empty-cart-message">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Your cart is empty</h3>
+                            <p>Add some products to your cart</p>
+                            <a href="Products.html" class="btn-primary">
+                                <i class="fas fa-shopping-bag"></i> Continue Shopping
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary-section">
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span id="shipping">$0.00</span>
+                            </div>
+                            
+                            <div class="summary-row">
+                                <span>Tax</span>
+                                <span id="tax">$0.00</span>
+                            </div>
+                            
+                            <div class="summary-row discount-row">
+                                <span>Discount</span>
+                                <span id="discount">-$0.00</span>
+                            </div>
+                            
+                            <div class="summary-row total-row">
+                                <span><strong>Total</strong></span>
+                                <span><strong id="total">$0.00</strong></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Coupon Code -->
+                        <div class="coupon-section">
+                            <input type="text" id="coupon-code" placeholder="Enter coupon code">
+                            <button id="apply-coupon">Apply</button>
+                        </div>
+                        
+                        <!-- Checkout Button -->
+                        <div class="checkout-action">
+                            <button class="btn-checkout" id="checkout-btn" onclick="window.location.href='Checkout.html'">
+                                <i class="fas fa-lock"></i> Proceed to Checkout
+                            </button>
+                            
+                            <a href="Products.html" class="continue-shopping">
+                                <i class="fas fa-arrow-left"></i> Continue Shopping
+                            </a>
+                        </div>
+                        
+                        <!-- Payment Methods -->
+                        <div class="payment-methods">
+                            <p>We accept:</p>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                                <i class="fab fa-cc-paypal"></i>
+                                <i class="fab fa-apple-pay"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Notice -->
+                    <div class="security-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Secure Shopping</h4>
+                            <p>Your personal information is protected with 256-bit SSL encryption</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <span>LUXE</span>
+                    </div>
+                    <p>Premium fashion for the modern individual. Quality, style, and elegance in every piece.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Products.html">Shop</a></li>
+                        <li><a href="Cart.html">Cart</a></li>
+                        <li><a href="Login.html">My Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@luxe.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fashion Street, New York, USA</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LUXE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ CORRECTED JS LINKS -->
+    <script src="js/theme.js"></script>
+    <script src="js/Cart.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/App.js"></script>
+    
+    <!-- Cart Initialization Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update cart count in header
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                const cartCountElement = document.querySelector('.cart-count');
+                if (cartCountElement) {
+                    cartCountElement.textContent = cartCount;
+                }
+            }
+            
+            updateCartCount();
+            
+            // Initialize theme
+            if (typeof initTheme === 'function') {
+                initTheme();
+            }
+            
+            // Initialize cart functionality
+            if (typeof initCart === 'function') {
+                initCart();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - LUXE Fashion</title>
+    
+    <!-- ✅ CORRECTED CSS LINKS -->
+    <link rel="stylesheet" href="css/Theme.css">
+    <link rel="stylesheet" href="css/Navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Checkout.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body data-page="checkout">
+
+    <!-- HEADER -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>LUXE</span>
+            </div>
+            
+            <nav id="navbar-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="AdminPanel.html">Admin Panel</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="cart-icon" onclick="window.location.href='Cart.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <div id="theme-selector" class="theme-selector">
+                    <label for="admin-theme-select">Theme:</label>
+                    <select id="admin-theme-select">
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHECKOUT PAGE CONTENT -->
+    <main id="checkout-page">
+        <div class="container">
+            <!-- Checkout Progress -->
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Cart</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step active">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Information</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Shipping</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Payment</div>
+                </div>
+            </div>
+            
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Checkout</h1>
+                <p>Complete your purchase with secure checkout</p>
+            </div>
+            
+            <!-- Checkout Content -->
+            <div class="checkout-content">
+                <!-- Left Column - Forms -->
+                <div class="checkout-forms">
+                    <!-- Contact Information -->
+                    <section class="checkout-section">
+                        <h2>
+                            <i class="fas fa-user"></i>
+                            Contact Information
+                        </h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="email-offers">
+                            <label for="email-offers">Email me with news and offers</label>
+                        </div>
+                    </section>
+                    
+                    <!-- Shipping Address -->
+                    <section class="checkout-section">
+                        <h2>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Shipping Address
+                        </h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="address">Address *</label>
+                                <input type="text" id="address" placeholder="123 Main Street" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="apartment">Apartment, suite, etc.</label>
+                                <input type="text" id="apartment" placeholder="Apt 4B">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" placeholder="New York" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country *</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">State/Province *</label>
+                                <input type="text" id="state" placeholder="NY" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">ZIP/Postal Code *</label>
+                                <input type="text" id="zip" placeholder="10001" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" placeholder="(123) 456-7890" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="save-address">
+                            <label for="save-address">Save this information for next time</label>
+                        </div>
+                    </section>
+                    
+                    <!-- Shipping Method -->
+                    <section class="checkout-section">
+                        <h2>
+                            <i class="fas fa-shipping-fast"></i>
+                            Shipping Method
+                        </h2>
+                        
+                        <div class="shipping-options">
+                            <div class="shipping-option selected">
+                                <input type="radio" name="shipping" id="standard-shipping" checked>
+                                <label for="standard-shipping">
+                                    <div class="option-header">
+                                        <strong>Standard Shipping</strong>
+                                        <span class="price">$5.99</span>
+                                    </div>
+                                    <p class="option-desc">5-7 business days</p>
+                                </label>
+                            </div>
+                            
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="express-shipping">
+                                <label for="express-shipping">
+                                    <div class="option-header">
+                                        <strong>Express Shipping</strong>
+                                        <span class="price">$14.99</span>
+                                    </div>
+                                    <p class="option-desc">2-3 business days</p>
+                                </label>
+                            </div>
+                            
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="overnight-shipping">
+                                <label for="overnight-shipping">
+                                    <div class="option-header">
+                                        <strong>Overnight Shipping</strong>
+                                        <span class="price">$24.99</span>
+                                    </div>
+                                    <p class="option-desc">Next business day</p>
+                                </label>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Continue Button -->
+                    <div class="continue-section">
+                        <a href="Cart.html" class="back-to-cart">
+                            <i class="fas fa-arrow-left"></i> Return to cart
+                        </a>
+                        <button class="btn-continue" id="continue-to-payment">
+                            Continue to Payment
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-header">
+                        <h2>Order Summary</h2>
+                    </div>
+                    
+                    <!-- Order Items -->
+                    <div class="order-items" id="checkout-items">
+                        <!-- Items will be loaded from cart -->
+                        <div class="empty-message">
+                            Your cart is empty
+                        </div>
+                    </div>
+                    
+                    <!-- Order Totals -->
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="total-row">
+                            <span>Shipping</span>
+                            <span id="checkout-shipping">$0.00</span>
+                        </div>
+                        
+                        <div class="total-row">
+                            <span>Tax</span>
+                            <span id="checkout-tax">$0.00</span>
+                        </div>
+                        
+                        <div class="total-row discount">
+                            <span>Discount</span>
+                            <span id="checkout-discount">-$0.00</span>
+                        </div>
+                        
+                        <div class="total-row grand-total">
+                            <span><strong>Total</strong></span>
+                            <span><strong id="checkout-total">$0.00</strong></span>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Info -->
+                    <div class="payment-info">
+                        <div class="secure-payment">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure Payment</span>
+                        </div>
+                        
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-apple-pay"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Guarantee -->
+                    <div class="guarantee">
+                        <i class="fas fa-lock"></i>
+                        <div>
+                            <strong>100% Secure Checkout</strong>
+                            <p>Your payment information is encrypted and secure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <span>LUXE</span>
+                    </div>
+                    <p>Premium fashion for the modern individual. Quality, style, and elegance in every piece.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Products.html">Shop</a></li>
+                        <li><a href="Cart.html">Cart</a></li>
+                        <li><a href="Login.html">My Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@luxe.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fashion Street, New York, USA</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LUXE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ CORRECTED JS LINKS -->
+    <script src="js/theme.js"></script>
+    <script src="js/Checkout.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/App.js"></script>
+    
+    <!-- Checkout Initialization Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update cart count in header
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                const cartCountElement = document.querySelector('.cart-count');
+                if (cartCountElement) {
+                    cartCountElement.textContent = cartCount;
+                }
+            }
+            
+            updateCartCount();
+            
+            // Initialize theme
+            if (typeof initTheme === 'function') {
+                initTheme();
+            }
+            
+            // Initialize checkout functionality
+            if (typeof initCheckout === 'function') {
+                initCheckout();
+            }
+            
+            // Shipping option selection
+            const shippingOptions = document.querySelectorAll('.shipping-option');
+            shippingOptions.forEach(option => {
+                const radio = option.querySelector('input[type="radio"]');
+                const label = option.querySelector('label');
+                
+                label.addEventListener('click', function() {
+                    shippingOptions.forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    option.classList.add('selected');
+                    radio.checked = true;
+                    
+                    // Update shipping price in summary
+                    updateShippingPrice(radio.id);
+                });
+            });
+            
+            function updateShippingPrice(shippingId) {
+                let shippingPrice = 0;
+                switch(shippingId) {
+                    case 'standard-shipping':
+                        shippingPrice = 5.99;
+                        break;
+                    case 'express-shipping':
+                        shippingPrice = 14.99;
+                        break;
+                    case 'overnight-shipping':
+                        shippingPrice = 24.99;
+                        break;
+                }
+                
+                // Update the display
+                const shippingElement = document.getElementById('checkout-shipping');
+                if (shippingElement) {
+                    shippingElement.textContent = `$${shippingPrice.toFixed(2)}`;
+                    updateOrderTotal();
+                }
+            }
+            
+            function updateOrderTotal() {
+                // This function should calculate total based on cart items
+                // For now, we'll use a placeholder
+                const subtotal = 0; // Should be calculated from cart
+                const shipping = parseFloat(document.getElementById('checkout-shipping').textContent.replace('$', '')) || 0;
+                const tax = subtotal * 0.08; // 8% tax
+                const discount = 0;
+                const total = subtotal + shipping + tax - discount;
+                
+                document.getElementById('checkout-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+                document.getElementById('checkout-tax').textContent = `$${tax.toFixed(2)}`;
+                document.getElementById('checkout-total').textContent = `$${total.toFixed(2)}`;
+            }
+            
+            // Continue to payment button
+            const continueBtn = document.getElementById('continue-to-payment');
+            if (continueBtn) {
+                continueBtn.addEventListener('click', function() {
+                    // Validate form before proceeding
+                    const email = document.getElementById('email').value;
+                    const firstName = document.getElementById('first-name').value;
+                    const lastName = document.getElementById('last-name').value;
+                    const address = document.getElementById('address').value;
+                    
+                    if (!email || !firstName || !lastName || !address) {
+                        alert('Please fill in all required fields');
+                        return;
+                    }
+                    
+                    // In a real app, you would proceed to payment page
+                    alert('Proceeding to payment page...');
+                    // window.location.href = 'payment.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

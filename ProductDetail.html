@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - LUXE Fashion</title>
+    
+    <!-- ✅ CORRECTED CSS LINKS -->
+    <link rel="stylesheet" href="css/Theme.css">
+    <link rel="stylesheet" href="css/Navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ProductDetail.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body data-page="product-detail">
+
+    <!-- HEADER -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>LUXE</span>
+            </div>
+            
+            <nav id="navbar-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Products.html">Products</a></li>
+                    <li><a href="Cart.html">Cart</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="AdminPanel.html">Admin Panel</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="cart-icon" onclick="window.location.href='Cart.html'">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                
+                <div id="theme-selector" class="theme-selector">
+                    <label for="admin-theme-select">Theme:</label>
+                    <select id="admin-theme-select">
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRODUCT DETAIL PAGE CONTENT -->
+    <main id="product-detail-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="Products.html">Products</a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="product-category">Category</span>
+                <i class="fas fa-chevron-right"></i>
+                <span id="product-name-breadcrumb">Product Name</span>
+            </nav>
+            
+            <!-- Product Detail Content -->
+            <div class="product-detail-content">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="main-product-image" src="images/product-placeholder.jpg" alt="Product Image">
+                        <span class="badge" id="product-badge">Sale</span>
+                    </div>
+                    
+                    <div class="image-thumbnails" id="image-thumbnails">
+                        <!-- Thumbnails will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-header">
+                        <h1 id="product-title">Product Name</h1>
+                        <div class="product-meta">
+                            <span class="sku">SKU: <span id="product-sku">PROD-001</span></span>
+                            <span class="availability" id="product-availability">In Stock</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-text">4.5 (128 reviews)</span>
+                        <a href="#reviews" class="view-reviews">View all reviews</a>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="current-price" id="current-price">$99.99</span>
+                        <span class="original-price" id="original-price">$129.99</span>
+                        <span class="discount" id="discount-percentage">23% OFF</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p id="product-description-text">
+                            Premium quality product with exceptional design and materials. 
+                            Perfect for everyday wear and special occasions.
+                        </p>
+                    </div>
+                    
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label for="size-select">Size:</label>
+                            <select id="size-select">
+                                <option value="">Select Size</option>
+                                <option value="s">Small (S)</option>
+                                <option value="m">Medium (M)</option>
+                                <option value="l">Large (L)</option>
+                                <option value="xl">Extra Large (XL)</option>
+                            </select>
+                            <a href="#size-guide" class="size-guide-link">Size Guide</a>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label for="color-select">Color:</label>
+                            <div class="color-options" id="color-options">
+                                <!-- Color options will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="option-group">
+                            <label for="quantity">Quantity:</label>
+                            <div class="quantity-selector">
+                                <button class="qty-btn minus" id="qty-minus">-</button>
+                                <input type="number" id="quantity" value="1" min="1" max="10">
+                                <button class="qty-btn plus" id="qty-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add to Cart & Actions -->
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" id="add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        
+                        <button class="btn-buy-now" id="buy-now-btn">
+                            <i class="fas fa-bolt"></i> Buy Now
+                        </button>
+                        
+                        <button class="btn-wishlist" id="wishlist-btn">
+                            <i class="far fa-heart"></i> Add to Wishlist
+                        </button>
+                    </div>
+                    
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <strong>Free Shipping</strong>
+                                <p>On orders over $100</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <i class="fas fa-undo-alt"></i>
+                            <div>
+                                <strong>30-Day Returns</strong>
+                                <p>Easy return policy</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>2-Year Warranty</strong>
+                                <p>Quality guarantee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-headers">
+                    <button class="tab-header active" data-tab="description">Description</button>
+                    <button class="tab-header" data-tab="specifications">Specifications</button>
+                    <button class="tab-header" data-tab="reviews">Reviews (128)</button>
+                    <button class="tab-header" data-tab="shipping">Shipping & Returns</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="description-tab">
+                        <h3>Detailed Description</h3>
+                        <p id="detailed-description">Full product description with features and benefits.</p>
+                    </div>
+                    
+                    <div class="tab-pane" id="specifications-tab">
+                        <h3>Product Specifications</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <th>Material</th>
+                                <td id="spec-material">Premium Cotton</td>
+                            </tr>
+                            <tr>
+                                <th>Care Instructions</th>
+                                <td id="spec-care">Machine wash cold</td>
+                            </tr>
+                            <tr>
+                                <th>Origin</th>
+                                <td id="spec-origin">Made in Italy</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="tab-pane" id="reviews-tab">
+                        <h3>Customer Reviews</h3>
+                        <!-- Reviews will be loaded here -->
+                    </div>
+                    
+                    <div class="tab-pane" id="shipping-tab">
+                        <h3>Shipping Information</h3>
+                        <p>Free shipping on orders over $100. Standard delivery: 3-5 business days.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Products -->
+            <div class="related-products">
+                <div class="section-header">
+                    <h2>You May Also Like</h2>
+                    <p>Similar products you might be interested in</p>
+                </div>
+                
+                <div class="products-grid" id="related-products">
+                    <!-- Related products will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <span>LUXE</span>
+                    </div>
+                    <p>Premium fashion for the modern individual. Quality, style, and elegance in every piece.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Products.html">Shop</a></li>
+                        <li><a href="Cart.html">Cart</a></li>
+                        <li><a href="Login.html">My Account</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@luxe.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fashion Street, New York, USA</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LUXE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ CORRECTED JS LINKS -->
+    <script src="js/theme.js"></script>
+    <script src="js/ProductDetail.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/App.js"></script>
+    
+    <!-- Product Detail Initialization Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update cart count in header
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                const cartCountElement = document.querySelector('.cart-count');
+                if (cartCountElement) {
+                    cartCountElement.textContent = cartCount;
+                }
+            }
+            
+            updateCartCount();
+            
+            // Initialize theme
+            if (typeof initTheme === 'function') {
+                initTheme();
+            }
+            
+            // Initialize product detail functionality
+            if (typeof initProductDetail === 'function') {
+                initProductDetail();
+            }
+            
+            // Tab functionality
+            const tabHeaders = document.querySelectorAll('.tab-header');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all headers and panes
+                    tabHeaders.forEach(h => h.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+                    
+                    // Add active class to clicked header and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

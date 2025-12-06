@@ -1,0 +1,260 @@
+/* ===== THEME SYSTEM ===== */
+
+/* Spring Theme (Default) */
+[data-theme="spring"] {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --text-color: #333;
+    --light-text: #7f8c8d;
+    --bg-color: #f8f9fa;
+    --card-bg: white;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Summer Theme */
+[data-theme="summer"] {
+    --primary-color: #2980b9;
+    --secondary-color: #1abc9c;
+    --accent-color: #e67e22;
+    --success-color: #27ae60;
+    --warning-color: #f1c40f;
+    --text-color: #2c3e50;
+    --light-text: #7f8c8d;
+    --bg-color: #f9f7f3;
+    --card-bg: white;
+    --border-color: #e8e8e8;
+    --shadow-color: rgba(231, 127, 34, 0.1);
+    --hero-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+/* Autumn Theme */
+[data-theme="autumn"] {
+    --primary-color: #8e44ad;
+    --secondary-color: #d35400;
+    --accent-color: #c0392b;
+    --success-color: #16a085;
+    --warning-color: #f39c12;
+    --text-color: #34495e;
+    --light-text: #7f8c8d;
+    --bg-color: #fef9f3;
+    --card-bg: white;
+    --border-color: #e8d8c9;
+    --shadow-color: rgba(142, 68, 173, 0.1);
+    --hero-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Winter Theme */
+[data-theme="winter"] {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #9b59b6;
+    --success-color: #1abc9c;
+    --warning-color: #34495e;
+    --text-color: #2c3e50;
+    --light-text: #95a5a6;
+    --bg-color: #f8fafc;
+    --card-bg: white;
+    --border-color: #e0e6ed;
+    --shadow-color: rgba(52, 152, 219, 0.1);
+    --hero-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+/* Apply Theme Variables */
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Header */
+#main-header {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.logo {
+    color: var(--primary-color);
+}
+
+#navbar-links a.active {
+    color: var(--accent-color);
+}
+
+#navbar-links a.active::after {
+    background-color: var(--accent-color);
+}
+
+#navbar-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 90%, black);
+}
+
+.btn-hero {
+    background-color: var(--accent-color);
+}
+
+.btn-hero:hover {
+    background-color: color-mix(in srgb, var(--accent-color) 90%, black);
+}
+
+/* Hero Section */
+#hero-section {
+    background: var(--hero-gradient);
+}
+
+/* Cards */
+.product-card,
+.feature-card,
+.stat-card,
+.chart-container,
+.recent-section,
+.products-section,
+.quick-actions,
+.auth-form,
+.order-summary,
+.checkout-forms,
+.cart-items-section {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Price Colors */
+.discounted-price {
+    color: var(--accent-color);
+}
+
+/* Theme Selector */
+.theme-selector select {
+    border-color: var(--border-color);
+    color: var(--text-color);
+    background-color: var(--card-bg);
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Form Elements */
+input, select, textarea {
+    border-color: var(--border-color);
+    color: var(--text-color);
+    background-color: var(--card-bg);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--secondary-color) 20%, transparent);
+}
+
+/* Tables */
+.admin-table th {
+    background-color: color-mix(in srgb, var(--bg-color) 50%, white);
+    color: var(--primary-color);
+    border-bottom-color: var(--border-color);
+}
+
+.admin-table td {
+    border-bottom-color: var(--border-color);
+}
+
+.admin-table tr:hover {
+    background-color: color-mix(in srgb, var(--secondary-color) 5%, transparent);
+}
+
+/* Status Colors */
+.status.delivered {
+    background-color: color-mix(in srgb, var(--success-color) 20%, white);
+    color: color-mix(in srgb, var(--success-color) 70%, black);
+}
+
+.status.pending {
+    background-color: color-mix(in srgb, var(--warning-color) 20%, white);
+    color: color-mix(in srgb, var(--warning-color) 70%, black);
+}
+
+/* Loading Spinner */
+.fa-spin {
+    color: var(--secondary-color);
+}
+
+/* Badges */
+.badge {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Feature Icons */
+.feature-card i,
+.benefit-item i {
+    color: var(--secondary-color);
+}
+
+/* Testimonial */
+.testimonial {
+    background-color: color-mix(in srgb, var(--secondary-color) 5%, transparent);
+    border-left-color: var(--secondary-color);
+}
+
+.testimonial-content i {
+    color: var(--secondary-color);
+}
+
+/* Theme Transition */
+body,
+#main-header,
+.logo,
+.btn-primary,
+.btn-hero,
+.product-card,
+.feature-card,
+.stat-card,
+.chart-container,
+.auth-form,
+.order-summary,
+.checkout-forms,
+.cart-items-section {
+    transition: all 0.5s ease;
+}
+
+/* Theme Preview in Selector */
+#admin-theme-select option {
+    padding: 10px;
+}
+
+#admin-theme-select option[value="spring"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#admin-theme-select option[value="summer"] {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #2c3e50;
+}
+
+#admin-theme-select option[value="autumn"] {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+#admin-theme-select option[value="winter"] {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2c3e50;
+}

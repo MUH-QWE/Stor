@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!-- Global Settings -->
+    <script>
+        const DEVELOPER_MODE = 1;      // Enable Local Storage
+        const USE_PHP_BACKEND = 0;     // Use PHP Backend
+        const DEBUG_MODE = 1;          // Enable debug logs
+        const OFFLINE_MODE = 1;        // Enable offline mode
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUXE - Premium Fashion</title>
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="css/Theme.css">
+    <link rel="stylesheet" href="css/Navbar.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Page-Specific CSS -->
+    <link rel="stylesheet" href="css/Home.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER (Static for home page) -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>LUXE</span>
+            </div>
+
+            <nav id="navbar-links"></nav>
+
+            <div class="header-actions">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+
+                <div id="theme-selector" class="theme-selector">
+                    <label for="admin-theme-select">Theme:</label>
+                    <select id="admin-theme-select">
+                        <option value="spring">Spring</option>
+                        <option value="summer">Summer</option>
+                        <option value="autumn">Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to LUXE</h1>
+                <p>Discover the latest collections of women's and men's fashion with modern style</p>
+                <button class="btn-hero" onclick="window.location.href='Products.html'">Explore Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SALE SECTION -->
+    <section id="sale-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>On Sale</h2>
+                <p>Special offers and discounts</p>
+            </div>
+
+            <div class="products-grid" id="sale-products">
+                <div class="product-card" data-id="1">
+                    <img src="images/product1.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+
+                    <div class="price">
+                        <span class="original-price">$100</span>
+                        <span class="discounted-price">$75</span>
+                    </div>
+
+                    <button class="edit-btn" style="display:none;">Edit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section id="best-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Best Sellers</h2>
+                <p>Our most popular items</p>
+            </div>
+
+            <div class="products-grid" id="best-products">
+                <div class="product-card" data-id="2">
+                    <img src="images/product2.jpg" alt="Product 2">
+                    <h3>Product 2</h3>
+
+                    <div class="price">
+                        <span class="discounted-price">$80</span>
+                    </div>
+
+                    <button class="edit-btn" style="display:none;">Edit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-crown"></i>
+                        <span>LUXE</span>
+                    </div>
+                    <p>Premium fashion for the modern individual. Quality, style, and elegance in every piece.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="Products.html">Shop</a></li>
+                        <li><a href="Cart.html">Cart</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> info@luxe.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fashion Street, Cairo, Egypt</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 LUXE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/navbar.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/Home.js"></script>
+    <script src="js/App.js"></script>
+
+</body>
+
+</html>
